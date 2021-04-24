@@ -3,6 +3,7 @@ import argparse
 
 OUTPUT = "output.txt"
 TEMPFILE = "temp.cnf"
+
 def parse_args():  
     '''
     my argumets!!
@@ -30,8 +31,8 @@ def add_literal(literal,filename,temporary_file=TEMPFILE):
         nb_clauses = int(line1.split()[-1] )
         lit_value =  abs(int(literal.split()[0]))
         #verifier si le liteeral est une nouvelle variable si c'et le cas incrementer le nombre de var  
-        if (lit_value > nb_var):
-            contenu[0] = "p cnf " +  str(nb_var+1) + str(nb_clauses+1)
+        if (lit_value not in contenu):
+            contenu[0] = "p cnf " +  str(nb_var+1) +  " " +str(nb_clauses+1) + " \n"
         else:
             contenu[0] = "p cnf " + str(nb_var)  + " " + str(nb_clauses+1)+ " \n"
         
@@ -52,11 +53,8 @@ def est_satisfaisable(output=OUTPUT):
             return True 
         elif("# No Solution found" in line):
             return False
-
-        
 def exec_obcsat(filename,out=OUTPUT):
     os.system(f"./ubcsat -alg  saps -i {filename} -solve > {out}")
-    
 
 def main():
     """
