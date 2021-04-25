@@ -20,24 +20,59 @@ def parse_args():
     
     return parser.parse_args()
 
-def add_literal(literal,filename,temporary_file=TEMPFILE):
+def neg_lit(literal):
+    """
+    transformer un literal en sa négation
+    """
+    if ( "-" in literal ):
+        negLit = str( abs (int(literal) ) )
+    else:
+        negLit = "-" + literal
+
+    return negLit
+
+
+def clause_to_literals(clause):
+    """
+    clause: clause ecris en forme cnf :
+            exemple 1 -2 0
+    """
+    lc  = clause.split()
     
-    with open(filename,"r") as file:
+    new_list_lit = []
+    #plus d'1 seul literal donc on
+    #vas faire leurs negation e$
+    for i in range(len(lc)-1):
+        new_list_lit.append(neg_lit(lc[i]))
+    print(new_list_lit)
+    return new_list_lit
+
+def add_literal(literal,filename,temporary_file=TEMPFILE):
+    """
+    
+    """ 
+    with open(filename,"r") as file :
         contenu = file.readlines()
         # verifier si la variable existe ou pas
         line1 = contenu[0]
-        
+
+
         nb_var =int( line1.split()[-2]  )
         nb_clauses = int(line1.split()[-1] )
-        lit_value =  abs(int(literal.split()[0]))
-        #verifier si le liteeral est une nouvelle variable si c'et le cas incrementer le nombre de var  
-        if (lit_value not in contenu):
-            contenu[0] = "p cnf " +  str(nb_var+1) +  " " +str(nb_clauses+1) + " \n"
-        else:
-            contenu[0] = "p cnf " + str(nb_var)  + " " + str(nb_clauses+1)+ " \n"
-        
-         
-        contenu.append("\n"+literal)
+
+        #lit_value =  abs(int(literal.split()[0]))
+        liste_lit = clause_to_literals(literal)
+        print("liste lit:")
+        for i in liste_lit:
+            print(i)
+        for i in liste_lit:
+            contenu.append("\n"+i+" 0")
+            nb_clauses  = nb_clauses + 1
+        #verifier si le liteeral est une nouvelle variable si c'et le cas incrementer le nombre de var
+            if i not  in contenu:
+                nb_var = nb_var +1
+                
+        contenu[0] = "p cnf " +  str(nb_var) +  " " +str(nb_clauses) + " \n"
         
     with open(temporary_file,"w") as file:
         for i in contenu:
@@ -57,9 +92,6 @@ def exec_obcsat(filename,out=OUTPUT):
     os.system(f"./ubcsat -alg  saps -i {filename} -solve > {out}")
 
 def main():
-    """
-    on suppose qu'on met en entrée le Non litteral
-    """ 
     
     args = parse_args()
     file_bc = args.path  + args.filename
@@ -68,9 +100,9 @@ def main():
         add_literal(args.literal,file_bc)
         exec_obcsat(TEMPFILE)
         if not est_satisfaisable() :
-            print(f"la base de conaissance {args.filename} infére le litteral {args.literal}")
+            print(f"la base de conaissance {args.filename} infére {args.literal}")
         else:
-            print(f"la base de conaissance {args.filename} n\'infére pas le litteral {args.literal}")
+            print(f"la base de conaissance {args.filename} n\'infére pas {args.literal}")
     
         os.remove(TEMPFILE)
         os.remove(OUTPUT)    
