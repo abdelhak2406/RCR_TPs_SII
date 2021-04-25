@@ -44,8 +44,15 @@ def clause_to_literals(clause):
     #vas faire leurs negation e$
     for i in range(len(lc)-1):
         new_list_lit.append(neg_lit(lc[i]))
-    print(new_list_lit)
     return new_list_lit
+
+def is_in(contenu, literal):
+    """ verifie si un literal est dans le tableau contenu"""
+    for i in contenu:
+        if literal in i:
+            return True
+    return False
+
 
 def add_literal(literal,filename,temporary_file=TEMPFILE):
     """
@@ -59,21 +66,17 @@ def add_literal(literal,filename,temporary_file=TEMPFILE):
 
         nb_var =int( line1.split()[-2]  )
         nb_clauses = int(line1.split()[-1] )
-
         #lit_value =  abs(int(literal.split()[0]))
         liste_lit = clause_to_literals(literal)
-        print("liste lit:")
+        nb_clauses = nb_clauses + len(liste_lit)  
         for i in liste_lit:
-            print(i)
-        for i in liste_lit:
-            contenu.append("\n"+i+" 0")
-            nb_clauses  = nb_clauses + 1
         #verifier si le liteeral est une nouvelle variable si c'et le cas incrementer le nombre de var
-            if i not  in contenu:
+            if not is_in(contenu[1:],i):
                 nb_var = nb_var +1
-                
+            contenu.append("\n"+i+" 0")
+            
         contenu[0] = "p cnf " +  str(nb_var) +  " " +str(nb_clauses) + " \n"
-        
+
     with open(temporary_file,"w") as file:
         for i in contenu:
             file.writelines(i)
@@ -100,9 +103,9 @@ def main():
         add_literal(args.literal,file_bc)
         exec_obcsat(TEMPFILE)
         if not est_satisfaisable() :
-            print(f"la base de conaissance {args.filename} infére {args.literal}")
+            print(f"\n la base de conaissance {args.filename} infére \" {args.literal} \" \n")
         else:
-            print(f"la base de conaissance {args.filename} n\'infére pas {args.literal}")
+            print(f"\n la base de conaissance {args.filename} n\'infére pas \" {args.literal} \" \n")
     
         os.remove(TEMPFILE)
         os.remove(OUTPUT)    
