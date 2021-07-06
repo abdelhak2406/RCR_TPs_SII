@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="orbital-core">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../ap_orbital1.3/Orbital/lib/orbital-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../ap_orbital1.3/Orbital/lib/orbital-ext.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
