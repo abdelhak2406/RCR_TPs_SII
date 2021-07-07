@@ -8,24 +8,24 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 Ontology(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8>
 
-Declaration(Class(:JAUNE))
-Declaration(Class(:LIGNE))
-Declaration(Class(:PETITRESEAU))
-Declaration(Class(:RESEAU))
-Declaration(Class(:RESEAUDENSE))
-Declaration(Class(:ROUGE))
-Declaration(Class(:STATION))
-Declaration(Class(:STATIONECHANGE))
-Declaration(Class(:STEXCHANGE))
-Declaration(Class(:STJ))
-Declaration(Class(:STJR))
-Declaration(Class(:STJV))
-Declaration(Class(:STR))
-Declaration(Class(:STSR))
-Declaration(Class(:STV))
-Declaration(Class(:STVR))
-Declaration(Class(:TERMINUS))
-Declaration(Class(:VERTE))
+Declaration(Class(:jaune))
+Declaration(Class(:ligne))
+Declaration(Class(:petit_reseau))
+Declaration(Class(:reseau))
+Declaration(Class(:reseau_dense))
+Declaration(Class(:rouge))
+Declaration(Class(:station))
+Declaration(Class(:station_echange))
+Declaration(Class(:stexchange))
+Declaration(Class(:stj))
+Declaration(Class(:stjr))
+Declaration(Class(:stjv))
+Declaration(Class(:str))
+Declaration(Class(:stsr))
+Declaration(Class(:stv))
+Declaration(Class(:stvr))
+Declaration(Class(:terminus))
+Declaration(Class(:verte))
 Declaration(ObjectProperty(:a-couleur))
 Declaration(ObjectProperty(:composé))
 Declaration(ObjectProperty(:suivant))
@@ -44,74 +44,74 @@ Declaration(NamedIndividual(:ZARA))
 
 # Object Property: :a-couleur (:a-couleur)
 
-ObjectPropertyDomain(:a-couleur :STATION)
-ObjectPropertyRange(:a-couleur :ROUGE)
+ObjectPropertyDomain(:a-couleur :station)
+ObjectPropertyRange(:a-couleur :rouge)
 
 # Object Property: :suivant (:suivant)
 
-ObjectPropertyDomain(:suivant :STATION)
-ObjectPropertyRange(:suivant :STATION)
+ObjectPropertyDomain(:suivant :station)
+ObjectPropertyRange(:suivant :station)
 
 
 ############################
 #   Classes
 ############################
 
-# Class: :LIGNE (:LIGNE)
+# Class: :ligne (:ligne)
 
-EquivalentClasses(:LIGNE ObjectIntersectionOf(ObjectSomeValuesFrom(:composé :STATION) ObjectMinCardinality(12 :composé) ObjectMaxCardinality(30 :composé)))
+EquivalentClasses(:ligne ObjectIntersectionOf(ObjectSomeValuesFrom(:composé :station) ObjectMinCardinality(12 :composé) ObjectMaxCardinality(30 :composé)))
 
-# Class: :PETITRESEAU (:PETITRESEAU)
+# Class: :petit_reseau (:petit_reseau)
 
-EquivalentClasses(:PETITRESEAU ObjectIntersectionOf(:RESEAU ObjectMaxCardinality(6 :composé)))
+EquivalentClasses(:petit_reseau ObjectIntersectionOf(:reseau ObjectMaxCardinality(6 :composé)))
 
-# Class: :RESEAU (:RESEAU)
+# Class: :reseau (:reseau)
 
-EquivalentClasses(:RESEAU ObjectSomeValuesFrom(:composé :LIGNE))
+EquivalentClasses(:reseau ObjectSomeValuesFrom(:composé :ligne))
 
-# Class: :RESEAUDENSE (:RESEAUDENSE)
+# Class: :reseau_dense (:reseau_dense)
 
-EquivalentClasses(:RESEAUDENSE ObjectIntersectionOf(:RESEAU ObjectMinCardinality(20 :composé)))
+EquivalentClasses(:reseau_dense ObjectIntersectionOf(:reseau ObjectMinCardinality(20 :composé)))
 
-# Class: :STEXCHANGE (:STEXCHANGE)
+# Class: :stexchange (:stexchange)
 
-EquivalentClasses(:STEXCHANGE ObjectUnionOf(:STJR :STJV :STVR))
+EquivalentClasses(:stexchange ObjectUnionOf(:stjr :stjv :stvr))
 
-# Class: :STJ (:STJ)
+# Class: :stj (:stj)
 
-EquivalentClasses(:STJ ObjectIntersectionOf(:STATION ObjectAllValuesFrom(:a-couleur :JAUNE)))
+EquivalentClasses(:stj ObjectIntersectionOf(:station ObjectAllValuesFrom(:a-couleur :jaune)))
 
-# Class: :STJR (:STJR)
+# Class: :stjr (:stjr)
 
-EquivalentClasses(:STJR ObjectIntersectionOf(:STATION ObjectUnionOf(ObjectSomeValuesFrom(:a-couleur :JAUNE) ObjectSomeValuesFrom(:a-couleur :ROUGE))))
+EquivalentClasses(:stjr ObjectIntersectionOf(:station ObjectUnionOf(ObjectSomeValuesFrom(:a-couleur :jaune) ObjectSomeValuesFrom(:a-couleur :rouge))))
 
-# Class: :STJV (:STJV)
+# Class: :stjv (:stjv)
 
-EquivalentClasses(:STJV ObjectIntersectionOf(:STATION ObjectUnionOf(ObjectSomeValuesFrom(:a-couleur :JAUNE) ObjectSomeValuesFrom(:a-couleur :VERTE))))
+EquivalentClasses(:stjv ObjectIntersectionOf(:station ObjectUnionOf(ObjectSomeValuesFrom(:a-couleur :jaune) ObjectSomeValuesFrom(:a-couleur :verte))))
 
-# Class: :STR (:STR)
+# Class: :str (:str)
 
-EquivalentClasses(:STR ObjectIntersectionOf(:STATION ObjectAllValuesFrom(:a-couleur :ROUGE)))
+EquivalentClasses(:str ObjectIntersectionOf(:station ObjectAllValuesFrom(:a-couleur :rouge)))
 
-# Class: :STSR (:STSR)
+# Class: :stsr (:stsr)
 
-EquivalentClasses(:STSR ObjectIntersectionOf(:STATION ObjectSomeValuesFrom(:suivant :STR)))
+EquivalentClasses(:stsr ObjectIntersectionOf(:station ObjectSomeValuesFrom(:suivant :str)))
 
-# Class: :STV (:STV)
+# Class: :stv (:stv)
 
-EquivalentClasses(:STV ObjectIntersectionOf(:STATION ObjectAllValuesFrom(:a-couleur :VERTE)))
+EquivalentClasses(:stv ObjectIntersectionOf(:station ObjectAllValuesFrom(:a-couleur :verte)))
 
-# Class: :STVR (:STVR)
+# Class: :stvr (:stvr)
 
-EquivalentClasses(:STVR ObjectIntersectionOf(:STATION ObjectUnionOf(ObjectSomeValuesFrom(:a-couleur :ROUGE) ObjectSomeValuesFrom(:a-couleur :VERTE))))
+EquivalentClasses(:stvr ObjectIntersectionOf(:station ObjectUnionOf(ObjectSomeValuesFrom(:a-couleur :rouge) ObjectSomeValuesFrom(:a-couleur :verte))))
 
-# Class: :TERMINUS (:TERMINUS)
+# Class: :terminus (:terminus)
 
-EquivalentClasses(:TERMINUS ObjectIntersectionOf(:STATION ObjectAllValuesFrom(:suivant owl:Nothing)))
+EquivalentClasses(:terminus ObjectIntersectionOf(:station ObjectAllValuesFrom(:suivant owl:Nothing)))
 
 # Class: owl:Thing (owl:Thing)
 
-SubClassOf(owl:Thing ObjectAllValuesFrom(:suivant :STATION))
+SubClassOf(owl:Thing ObjectAllValuesFrom(:suivant :station))
 
 
 ############################
@@ -120,19 +120,19 @@ SubClassOf(owl:Thing ObjectAllValuesFrom(:suivant :STATION))
 
 # Individual: :BONOLA (:BONOLA)
 
-ClassAssertion(:STR :BONOLA)
+ClassAssertion(:str :BONOLA)
 
 # Individual: :CROCETTA (:CROCETTA)
 
-ClassAssertion(:STJ :CROCETTA)
+ClassAssertion(:stj :CROCETTA)
 
 # Individual: :DUOMO (:DUOMO)
 
-ClassAssertion(:STJR :DUOMO)
+ClassAssertion(:stjr :DUOMO)
 
 # Individual: :MILANO (:MILANO)
 
-ClassAssertion(:RESEAU :MILANO)
+ClassAssertion(:reseau :MILANO)
 
 # Individual: :PASTEUR (:PASTEUR)
 
@@ -140,7 +140,7 @@ ObjectPropertyAssertion(:suivant :PASTEUR :ROVERETO)
 
 # Individual: :S.DONATA (:S.DONATA)
 
-ClassAssertion(:TERMINUS :S.DONATA)
+ClassAssertion(:terminus :S.DONATA)
 
 # Individual: :ZARA (:ZARA)
 
