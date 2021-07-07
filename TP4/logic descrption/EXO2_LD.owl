@@ -1,0 +1,442 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#"
+     xml:base="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-8="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#composé -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#composé"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#suivant -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#suivant">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#JAUNE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#JAUNE"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#LIGNE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#LIGNE">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#composé"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#composé"/>
+                        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">12</owl:minCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#composé"/>
+                        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">30</owl:maxCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#PETITRESEAU -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#PETITRESEAU">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#RESEAU"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#composé"/>
+                        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">6</owl:maxCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#RESEAU -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#RESEAU">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#composé"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#LIGNE"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#RESEAUDENSE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#RESEAUDENSE">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#RESEAU"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#composé"/>
+                        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">20</owl:minCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATIONECHANGE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATIONECHANGE"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STEXCHANGE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STEXCHANGE">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJR"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJV"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STVR"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJ">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#JAUNE"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJR -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJR">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#JAUNE"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJV -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJV">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#JAUNE"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#VERTE"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STR -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STR">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STSR -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STSR">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#suivant"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STR"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STV -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STV">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#VERTE"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STVR -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STVR">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#VERTE"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#TERMINUS -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#TERMINUS">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#suivant"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#VERTE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#VERTE"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#suivant"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#BONOLA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#BONOLA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STR"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#CROCETTA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#CROCETTA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJ"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#DUOMO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#DUOMO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJR"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#MILANO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#MILANO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#RESEAU"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#PASTEUR -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#PASTEUR">
+        <suivant rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROVERETO"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROVERETO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROVERETO"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#S.DONATA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#S.DONATA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#TERMINUS"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ZARA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ZARA">
+        <a-couleur rdf:resource="http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

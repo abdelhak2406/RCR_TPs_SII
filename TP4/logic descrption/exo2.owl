@@ -1,0 +1,194 @@
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+Ontology: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8>
+
+
+ObjectProperty: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur>
+
+    Domain: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION>
+    
+    Range: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#composé>
+
+    
+ObjectProperty: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#suivant>
+
+    Domain: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION>
+    
+    Range: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION>
+    
+    
+Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#JAUNE>
+
+    
+Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#LIGNE>
+
+    EquivalentTo: 
+        (<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#composé> some <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION>)
+         and (<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#composé> min 12 owl:Thing)
+         and (<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#composé> max 30 owl:Thing)
+    
+    
+Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#PETITRESEAU>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#RESEAU>
+         and (<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#composé> max 6 owl:Thing)
+    
+    
+Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#RESEAU>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#composé> some <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#LIGNE>
+    
+    
+Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#RESEAUDENSE>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#RESEAU>
+         and (<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#composé> min 20 owl:Thing)
+    
+    
+Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE>
+
+    
+Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION>
+
+    
+Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATIONECHANGE>
+
+    
+Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STEXCHANGE>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJR> or <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJV> or <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STVR>
+    
+    
+Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJ>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION>
+         and (<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur> only <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#JAUNE>)
+    
+    
+Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJR>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION>
+         and ((<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur> some <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#JAUNE>) or (<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur> some <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE>))
+    
+    
+Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJV>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION>
+         and ((<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur> some <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#JAUNE>) or (<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur> some <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#VERTE>))
+    
+    
+Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STR>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION>
+         and (<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur> only <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE>)
+    
+    
+Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STSR>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION>
+         and (<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#suivant> some <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STR>)
+    
+    
+Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STV>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION>
+         and (<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur> only <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#VERTE>)
+    
+    
+Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STVR>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION>
+         and ((<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur> some <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE>) or (<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur> some <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#VERTE>))
+    
+    
+Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#TERMINUS>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION>
+         and (<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#suivant> only owl:Nothing)
+    
+    
+Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#VERTE>
+
+    
+Class: owl:Nothing
+
+    
+Class: owl:Thing
+
+    SubClassOf: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#suivant> only <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION>
+    
+    
+Individual: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#BONOLA>
+
+    Types: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STR>
+    
+    
+Individual: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#CROCETTA>
+
+    Types: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJ>
+    
+    
+Individual: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#DUOMO>
+
+    Types: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJR>
+    
+    
+Individual: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#MILANO>
+
+    Types: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#RESEAU>
+    
+    
+Individual: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#PASTEUR>
+
+    Facts:  
+     <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#suivant>  <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROVERETO>
+    
+    
+Individual: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE>
+
+    
+Individual: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROVERETO>
+
+    
+Individual: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#S.DONATA>
+
+    Types: 
+        <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#TERMINUS>
+    
+    
+Individual: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ZARA>
+
+    Facts:  
+     <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur>  <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE>
+    
+    

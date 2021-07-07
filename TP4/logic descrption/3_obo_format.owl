@@ -1,0 +1,73 @@
+format-version: 1.2
+ontology: http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#JAUNE>))\nDeclaration(Class(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#LIGNE>))\nDeclaration(Class(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#RESEAU>))\nDeclaration(Class(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE>))\nDeclaration(Class(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION>))\nDeclaration(Class(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJR>))\nDeclaration(Class(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJV>))\nDeclaration(Class(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STVR>))\nDeclaration(Class(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#VERTE>))\nDeclaration(ObjectProperty(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur>))\nDeclaration(ObjectProperty(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#composé>))\nDeclaration(ObjectProperty(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#suivant>))\nDeclaration(NamedIndividual(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#PASTEUR>))\nDeclaration(NamedIndividual(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE>))\nDeclaration(NamedIndividual(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROVERETO>))\nDeclaration(NamedIndividual(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ZARA>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#RESEAU> (<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#RESEAU>)\n\nEquivalentClasses(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#RESEAU> ObjectSomeValuesFrom(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#composé> <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#LIGNE>))\n\n# Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJR> (<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJR>)\n\nEquivalentClasses(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJR> ObjectIntersectionOf(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION> ObjectUnionOf(ObjectSomeValuesFrom(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur> <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#JAUNE>) ObjectSomeValuesFrom(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur> <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE>))))\n\n# Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJV> (<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJV>)\n\nEquivalentClasses(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJV> ObjectIntersectionOf(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION> ObjectUnionOf(ObjectSomeValuesFrom(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur> <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#JAUNE>) ObjectSomeValuesFrom(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur> <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#VERTE>))))\n\n# Class: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STVR> (<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STVR>)\n\nEquivalentClasses(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STVR> ObjectIntersectionOf(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION> ObjectUnionOf(ObjectSomeValuesFrom(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur> <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE>) ObjectSomeValuesFrom(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur> <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#VERTE>))))\n\n# Class: owl:Thing (owl:Thing)\n\nSubClassOf(owl:Thing ObjectAllValuesFrom(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#suivant> <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION>))\n\n\n############################\n#   Named Individuals\n############################\n\n# Individual: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#PASTEUR> (<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#PASTEUR>)\n\nObjectPropertyAssertion(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#suivant> <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#PASTEUR> <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROVERETO>)\n\n# Individual: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ZARA> (<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ZARA>)\n\nObjectPropertyAssertion(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur> <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ZARA> <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE>)\n\n\n)
+
+[Term]
+id: LIGNE
+intersection_of: composé owl:Thing {minCardinality="12"}
+intersection_of: composé owl:Thing {maxCardinality="30"}
+intersection_of: composé STATION
+
+[Term]
+id: PETITRESEAU
+intersection_of: RESEAU
+intersection_of: composé owl:Thing {maxCardinality="6"}
+
+[Term]
+id: RESEAU
+
+[Term]
+id: RESEAUDENSE
+intersection_of: RESEAU
+intersection_of: composé owl:Thing {minCardinality="20"}
+
+[Term]
+id: STEXCHANGE
+union_of: STJR
+union_of: STJV
+union_of: STVR
+
+[Term]
+id: STJ
+intersection_of: STATION
+intersection_of: a-couleur JAUNE {all_only="true"}
+
+[Term]
+id: STJR
+
+[Term]
+id: STJV
+
+[Term]
+id: STR
+intersection_of: STATION
+intersection_of: a-couleur ROUGE {all_only="true"}
+
+[Term]
+id: STSR
+intersection_of: STATION
+intersection_of: suivant STR
+
+[Term]
+id: STV
+intersection_of: STATION
+intersection_of: a-couleur VERTE {all_only="true"}
+
+[Term]
+id: STVR
+
+[Term]
+id: TERMINUS
+intersection_of: STATION
+intersection_of: suivant owl:Nothing {all_only="true"}
+
+[Typedef]
+id: a-couleur
+domain: STATION
+range: ROUGE
+
+[Typedef]
+id: suivant
+domain: STATION
+range: STATION
+

@@ -1,0 +1,195 @@
+Prefix: : <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+Ontology: <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8>
+
+
+ObjectProperty: a-couleur
+
+    Domain: 
+        STATION
+    
+    Range: 
+        ROUGE
+    
+    
+ObjectProperty: composé
+
+    
+ObjectProperty: suivant
+
+    Domain: 
+        STATION
+    
+    Range: 
+        STATION
+    
+    
+Class: JAUNE
+
+    
+Class: LIGNE
+
+    EquivalentTo: 
+        (composé some STATION)
+         and (composé min 12 owl:Thing)
+         and (composé max 30 owl:Thing)
+    
+    
+Class: PETITRESEAU
+
+    EquivalentTo: 
+        RESEAU
+         and (composé max 6 owl:Thing)
+    
+    
+Class: RESEAU
+
+    EquivalentTo: 
+        composé some LIGNE
+    
+    
+Class: RESEAUDENSE
+
+    EquivalentTo: 
+        RESEAU
+         and (composé min 20 owl:Thing)
+    
+    
+Class: ROUGE
+
+    
+Class: STATION
+
+    
+Class: STATIONECHANGE
+
+    
+Class: STEXCHANGE
+
+    EquivalentTo: 
+        STJR or STJV or STVR
+    
+    
+Class: STJ
+
+    EquivalentTo: 
+        STATION
+         and (a-couleur only JAUNE)
+    
+    
+Class: STJR
+
+    EquivalentTo: 
+        STATION
+         and ((a-couleur some JAUNE) or (a-couleur some ROUGE))
+    
+    
+Class: STJV
+
+    EquivalentTo: 
+        STATION
+         and ((a-couleur some JAUNE) or (a-couleur some VERTE))
+    
+    
+Class: STR
+
+    EquivalentTo: 
+        STATION
+         and (a-couleur only ROUGE)
+    
+    
+Class: STSR
+
+    EquivalentTo: 
+        STATION
+         and (suivant some STR)
+    
+    
+Class: STV
+
+    EquivalentTo: 
+        STATION
+         and (a-couleur only VERTE)
+    
+    
+Class: STVR
+
+    EquivalentTo: 
+        STATION
+         and ((a-couleur some ROUGE) or (a-couleur some VERTE))
+    
+    
+Class: TERMINUS
+
+    EquivalentTo: 
+        STATION
+         and (suivant only owl:Nothing)
+    
+    
+Class: VERTE
+
+    
+Class: owl:Nothing
+
+    
+Class: owl:Thing
+
+    SubClassOf: 
+        suivant only STATION
+    
+    
+Individual: BONOLA
+
+    Types: 
+        STR
+    
+    
+Individual: CROCETTA
+
+    Types: 
+        STJ
+    
+    
+Individual: DUOMO
+
+    Types: 
+        STJR
+    
+    
+Individual: MILANO
+
+    Types: 
+        RESEAU
+    
+    
+Individual: PASTEUR
+
+    Facts:  
+     suivant  ROVERETO
+    
+    
+Individual: ROUGE
+
+    
+Individual: ROVERETO
+
+    
+Individual: S.DONATA
+
+    Types: 
+        TERMINUS
+    
+    
+Individual: ZARA
+
+    Facts:  
+     a-couleur  ROUGE
+    
+    

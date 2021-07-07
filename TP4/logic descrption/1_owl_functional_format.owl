@@ -1,0 +1,150 @@
+Prefix(:=<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8>
+
+Declaration(Class(:JAUNE))
+Declaration(Class(:LIGNE))
+Declaration(Class(:PETITRESEAU))
+Declaration(Class(:RESEAU))
+Declaration(Class(:RESEAUDENSE))
+Declaration(Class(:ROUGE))
+Declaration(Class(:STATION))
+Declaration(Class(:STATIONECHANGE))
+Declaration(Class(:STEXCHANGE))
+Declaration(Class(:STJ))
+Declaration(Class(:STJR))
+Declaration(Class(:STJV))
+Declaration(Class(:STR))
+Declaration(Class(:STSR))
+Declaration(Class(:STV))
+Declaration(Class(:STVR))
+Declaration(Class(:TERMINUS))
+Declaration(Class(:VERTE))
+Declaration(ObjectProperty(:a-couleur))
+Declaration(ObjectProperty(:composé))
+Declaration(ObjectProperty(:suivant))
+Declaration(NamedIndividual(:BONOLA))
+Declaration(NamedIndividual(:CROCETTA))
+Declaration(NamedIndividual(:DUOMO))
+Declaration(NamedIndividual(:MILANO))
+Declaration(NamedIndividual(:PASTEUR))
+Declaration(NamedIndividual(:ROUGE))
+Declaration(NamedIndividual(:ROVERETO))
+Declaration(NamedIndividual(:S.DONATA))
+Declaration(NamedIndividual(:ZARA))
+############################
+#   Object Properties
+############################
+
+# Object Property: :a-couleur (:a-couleur)
+
+ObjectPropertyDomain(:a-couleur :STATION)
+ObjectPropertyRange(:a-couleur :ROUGE)
+
+# Object Property: :suivant (:suivant)
+
+ObjectPropertyDomain(:suivant :STATION)
+ObjectPropertyRange(:suivant :STATION)
+
+
+############################
+#   Classes
+############################
+
+# Class: :LIGNE (:LIGNE)
+
+EquivalentClasses(:LIGNE ObjectIntersectionOf(ObjectSomeValuesFrom(:composé :STATION) ObjectMinCardinality(12 :composé) ObjectMaxCardinality(30 :composé)))
+
+# Class: :PETITRESEAU (:PETITRESEAU)
+
+EquivalentClasses(:PETITRESEAU ObjectIntersectionOf(:RESEAU ObjectMaxCardinality(6 :composé)))
+
+# Class: :RESEAU (:RESEAU)
+
+EquivalentClasses(:RESEAU ObjectSomeValuesFrom(:composé :LIGNE))
+
+# Class: :RESEAUDENSE (:RESEAUDENSE)
+
+EquivalentClasses(:RESEAUDENSE ObjectIntersectionOf(:RESEAU ObjectMinCardinality(20 :composé)))
+
+# Class: :STEXCHANGE (:STEXCHANGE)
+
+EquivalentClasses(:STEXCHANGE ObjectUnionOf(:STJR :STJV :STVR))
+
+# Class: :STJ (:STJ)
+
+EquivalentClasses(:STJ ObjectIntersectionOf(:STATION ObjectAllValuesFrom(:a-couleur :JAUNE)))
+
+# Class: :STJR (:STJR)
+
+EquivalentClasses(:STJR ObjectIntersectionOf(:STATION ObjectUnionOf(ObjectSomeValuesFrom(:a-couleur :JAUNE) ObjectSomeValuesFrom(:a-couleur :ROUGE))))
+
+# Class: :STJV (:STJV)
+
+EquivalentClasses(:STJV ObjectIntersectionOf(:STATION ObjectUnionOf(ObjectSomeValuesFrom(:a-couleur :JAUNE) ObjectSomeValuesFrom(:a-couleur :VERTE))))
+
+# Class: :STR (:STR)
+
+EquivalentClasses(:STR ObjectIntersectionOf(:STATION ObjectAllValuesFrom(:a-couleur :ROUGE)))
+
+# Class: :STSR (:STSR)
+
+EquivalentClasses(:STSR ObjectIntersectionOf(:STATION ObjectSomeValuesFrom(:suivant :STR)))
+
+# Class: :STV (:STV)
+
+EquivalentClasses(:STV ObjectIntersectionOf(:STATION ObjectAllValuesFrom(:a-couleur :VERTE)))
+
+# Class: :STVR (:STVR)
+
+EquivalentClasses(:STVR ObjectIntersectionOf(:STATION ObjectUnionOf(ObjectSomeValuesFrom(:a-couleur :ROUGE) ObjectSomeValuesFrom(:a-couleur :VERTE))))
+
+# Class: :TERMINUS (:TERMINUS)
+
+EquivalentClasses(:TERMINUS ObjectIntersectionOf(:STATION ObjectAllValuesFrom(:suivant owl:Nothing)))
+
+# Class: owl:Thing (owl:Thing)
+
+SubClassOf(owl:Thing ObjectAllValuesFrom(:suivant :STATION))
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: :BONOLA (:BONOLA)
+
+ClassAssertion(:STR :BONOLA)
+
+# Individual: :CROCETTA (:CROCETTA)
+
+ClassAssertion(:STJ :CROCETTA)
+
+# Individual: :DUOMO (:DUOMO)
+
+ClassAssertion(:STJR :DUOMO)
+
+# Individual: :MILANO (:MILANO)
+
+ClassAssertion(:RESEAU :MILANO)
+
+# Individual: :PASTEUR (:PASTEUR)
+
+ObjectPropertyAssertion(:suivant :PASTEUR :ROVERETO)
+
+# Individual: :S.DONATA (:S.DONATA)
+
+ClassAssertion(:TERMINUS :S.DONATA)
+
+# Individual: :ZARA (:ZARA)
+
+ObjectPropertyAssertion(:a-couleur :ZARA :ROUGE)
+
+
+)

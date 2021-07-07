@@ -1,0 +1,287 @@
+@prefix : <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8> .
+
+<http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#a-couleur
+:a-couleur rdf:type owl:ObjectProperty ;
+           rdfs:domain :STATION ;
+           rdfs:range :ROUGE .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#composé
+:composé rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#suivant
+:suivant rdf:type owl:ObjectProperty ;
+         rdfs:domain :STATION ;
+         rdfs:range :STATION .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#JAUNE
+:JAUNE rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#LIGNE
+:LIGNE rdf:type owl:Class ;
+       owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :composé ;
+                                                    owl:someValuesFrom :STATION
+                                                  ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :composé ;
+                                                    owl:minCardinality "12"^^xsd:nonNegativeInteger
+                                                  ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :composé ;
+                                                    owl:maxCardinality "30"^^xsd:nonNegativeInteger
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#PETITRESEAU
+:PETITRESEAU rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( :RESEAU
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :composé ;
+                                                          owl:maxCardinality "6"^^xsd:nonNegativeInteger
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#RESEAU
+:RESEAU rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Restriction ;
+                              owl:onProperty :composé ;
+                              owl:someValuesFrom :LIGNE
+                            ] .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#RESEAUDENSE
+:RESEAUDENSE rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( :RESEAU
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :composé ;
+                                                          owl:minCardinality "20"^^xsd:nonNegativeInteger
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE
+:ROUGE rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATION
+:STATION rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STATIONECHANGE
+:STATIONECHANGE rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STEXCHANGE
+:STEXCHANGE rdf:type owl:Class ;
+            owl:equivalentClass [ rdf:type owl:Class ;
+                                  owl:unionOf ( :STJR
+                                                :STJV
+                                                :STVR
+                                              )
+                                ] .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJ
+:STJ rdf:type owl:Class ;
+     owl:equivalentClass [ owl:intersectionOf ( :STATION
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :a-couleur ;
+                                                  owl:allValuesFrom :JAUNE
+                                                ]
+                                              ) ;
+                           rdf:type owl:Class
+                         ] .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJR
+:STJR rdf:type owl:Class ;
+      owl:equivalentClass [ owl:intersectionOf ( :STATION
+                                                 [ rdf:type owl:Class ;
+                                                   owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :a-couleur ;
+                                                                   owl:someValuesFrom :JAUNE
+                                                                 ]
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :a-couleur ;
+                                                                   owl:someValuesFrom :ROUGE
+                                                                 ]
+                                                               )
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STJV
+:STJV rdf:type owl:Class ;
+      owl:equivalentClass [ owl:intersectionOf ( :STATION
+                                                 [ rdf:type owl:Class ;
+                                                   owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :a-couleur ;
+                                                                   owl:someValuesFrom :JAUNE
+                                                                 ]
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :a-couleur ;
+                                                                   owl:someValuesFrom :VERTE
+                                                                 ]
+                                                               )
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STR
+:STR rdf:type owl:Class ;
+     owl:equivalentClass [ owl:intersectionOf ( :STATION
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :a-couleur ;
+                                                  owl:allValuesFrom :ROUGE
+                                                ]
+                                              ) ;
+                           rdf:type owl:Class
+                         ] .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STSR
+:STSR rdf:type owl:Class ;
+      owl:equivalentClass [ owl:intersectionOf ( :STATION
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :suivant ;
+                                                   owl:someValuesFrom :STR
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STV
+:STV rdf:type owl:Class ;
+     owl:equivalentClass [ owl:intersectionOf ( :STATION
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :a-couleur ;
+                                                  owl:allValuesFrom :VERTE
+                                                ]
+                                              ) ;
+                           rdf:type owl:Class
+                         ] .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#STVR
+:STVR rdf:type owl:Class ;
+      owl:equivalentClass [ owl:intersectionOf ( :STATION
+                                                 [ rdf:type owl:Class ;
+                                                   owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :a-couleur ;
+                                                                   owl:someValuesFrom :ROUGE
+                                                                 ]
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :a-couleur ;
+                                                                   owl:someValuesFrom :VERTE
+                                                                 ]
+                                                               )
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#TERMINUS
+:TERMINUS rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :STATION
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :suivant ;
+                                                       owl:allValuesFrom owl:Nothing
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#VERTE
+:VERTE rdf:type owl:Class .
+
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :suivant ;
+                            owl:allValuesFrom :STATION
+                          ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#BONOLA
+:BONOLA rdf:type owl:NamedIndividual ,
+                 :STR .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#CROCETTA
+:CROCETTA rdf:type owl:NamedIndividual ,
+                   :STJ .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#DUOMO
+:DUOMO rdf:type owl:NamedIndividual ,
+                :STJR .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#MILANO
+:MILANO rdf:type owl:NamedIndividual ,
+                 :RESEAU .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#PASTEUR
+:PASTEUR rdf:type owl:NamedIndividual ;
+         :suivant :ROVERETO .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROUGE
+:ROUGE rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ROVERETO
+:ROVERETO rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#S.DONATA
+:S.DONATA rdf:type owl:NamedIndividual ,
+                   :TERMINUS .
+
+
+###  http://www.semanticweb.org/dell/ontologies/2021/1/untitled-ontology-8#ZARA
+:ZARA rdf:type owl:NamedIndividual ;
+      :a-couleur :ROUGE .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,397 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#"
+     xml:base="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-40="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#"
+     xmlns:untitled-ontology-42="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#contient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#contient">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#a-coté -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#a-coté">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#définie -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#définie">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#délimité-est -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#délimité-est">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#faitpartie -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#faitpartie">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#chambre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#chambre"/>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#mur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#mur">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#faitpartie"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#chambre"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#position_debut -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#position_debut"/>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#position_fin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#position_fin"/>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#adresse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#adresse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#localisatoin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#appartement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#appartement">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#contient"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#chambre"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#maison_collective"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#architecture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#architecture"/>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#batiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#batiment">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#date_construction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#date_construction"/>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#localisatoin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#localisatoin"/>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#location"/>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#longeur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#longeur"/>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#maison -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#maison">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#délimité-est"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#mur"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#définie"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#architecture"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#date_construction"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#surface"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#batiment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#maison_collective -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#maison_collective">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#batiment"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#maison_privé"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#maison_prive -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#maison_prive"/>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#maison_privé -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#maison_privé">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#batiment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#orientation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#orientation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#rue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#rue">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#définie"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#position_debut"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#définie"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#position_fin"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#définie"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#longeur"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#définie"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#orientation"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#structure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#structure"/>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#surface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#surface"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#batiment_b001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#batiment_b001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#batiment"/>
+        <a-coté rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#batiment_b002"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#batiment_b002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#batiment_b002">
+        <rdf:type rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#batiment"/>
+        <a-coté rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#batiment_b001"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#chambre_r200 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#chambre_r200">
+        <rdf:type rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#chambre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#date_cons -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#date_cons">
+        <rdf:type rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#date_construction"/>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">19eme siécle</owl:topDataProperty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#maison_h004 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#maison_h004">
+        <rdf:type rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#maison"/>
+        <untitled-ontology-40:contient rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#mur_wh2019"/>
+        <définie rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#date_cons"/>
+        <définie rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#surface"/>
+        <owl:topObjectProperty rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#date_cons"/>
+        <owl:topObjectProperty rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#pos_fin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#mur_wh2019 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#mur_wh2019">
+        <rdf:type rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#mur"/>
+        <faitpartie rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#chambre_r200"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#pos_deb -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#pos_deb">
+        <rdf:type rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#position_debut"/>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#float">36.32078</owl:topDataProperty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#pos_fin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#pos_fin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#position_fin"/>
+        <owl:topObjectProperty rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#pos_deb"/>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5.736546</owl:topDataProperty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#surface -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#surface">
+        <rdf:type rdf:resource="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#surface"/>
+        <owl:topDataProperty rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</owl:topDataProperty>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#chambre"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#mur"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#position_debut"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-40#position_fin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#architecture"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#batiment"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#date_construction"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#localisatoin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#longeur"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#maison_collective"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#maison_prive"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#orientation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#structure"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/goku/ontologies/2021/6/untitled-ontology-42#surface"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
